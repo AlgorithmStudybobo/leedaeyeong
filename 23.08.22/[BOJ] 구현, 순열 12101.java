@@ -74,8 +74,7 @@ public class Main {
 
 			check: while (true) { // <- 이거 좋은듯 파이썬 버릴 이유 하나 찾음 (검색해서 찾음)
 				for (int i = hit; i < 10; i++) {
-					int attack = game[round][player[i]];
-					switch (attack) {
+					switch (game[round][player[i]]) {
 					// 아웃 카운트
 					case 0:
 						out++; break;
@@ -136,10 +135,11 @@ public class Main {
 						if (hit == 10) {
 							hit = 1;
 						}
+						// 외부 while문으로 나가기때문에 hit가 1로 초기화 안됨 -> 이전 번호의 다음 번호
 						break check;
 					}
 				}
-				// 삼진 아웃을 안당하면 다시 while 루프를 도는데 hit를 초기화 해서 첫번째 선수부터 다시 입장
+				// 9번 선수까지 출전하면 다시 1번 선수부터
 				hit = 1;
 			}
 		}
