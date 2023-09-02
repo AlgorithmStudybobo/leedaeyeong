@@ -38,7 +38,7 @@ public class Main {
 				target[++cnt] = nums[idx];
 			}
 			// 크기가 작다면 몇번째 위치에 담을 수 있는지 확인
-            else {
+			else {
 				target[lower(0, cnt, nums[idx])] = nums[idx];
 			}
 		}
