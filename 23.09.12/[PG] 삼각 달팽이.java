@@ -22,16 +22,16 @@ class Solution {
 		int r = 0, c = 0, d = 0;
 		
         while (cnt < n) {
-			map[r][c] = move++;	
+            map[r][c] = move++;	
             if (r + dir[d][0] == n || c + dir[d][1] == n || map[r + dir[d][0]][c + dir[d][1]] != 0) {
-				d = (d + 1) % 3;
-				cnt++;
-			}
-			r += dir[d][0];
-			c += dir[d][1];
-		}
+                d = (d + 1) % 3;
+                cnt++;
+            }
+            r += dir[d][0];
+            c += dir[d][1];
+        }
 		
-		int tmp = 0;
+        int tmp = 0;
         int[] answer = new int[move-1];
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){

@@ -42,7 +42,7 @@ class Solution {
             p.add(new Point(r[0] * 2, r[1] * 2, r[2] * 2, r[3] * 2));
         }   
         
-        return move(rect, characterX * 2, characterY * 2, itemX * 2, itemY * 2);
+        return move(rect, characterX * 2, characterY * 2, itemX * 2, itemY * 2) / 2;
     }
 
     private static int move(int[][] rect, int x, int y, int ix, int iy){
@@ -53,15 +53,15 @@ class Solution {
             int[] nxt = q.poll();
             
             if(nxt[0] == iy && nxt[1] == ix){
-                return nxt[2] / 2;
+                return nxt[2];
             }
             
             for(int i = 0; i < 4; i++){
                 int nx = nxt[0] + dir[i][0];
                 int ny = nxt[1] + dir[i][1];
                 if(rect[nx][ny] < 0 && check(nx, ny)){
-                    rect[nx][ny] = nxt[2] + 1;
                     q.offer(new int[]{nx, ny, nxt[2] + 1});
+                    rect[nx][ny] = nxt[2] + 1;
                 }
             }
         }
