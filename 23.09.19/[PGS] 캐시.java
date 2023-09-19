@@ -3,7 +3,7 @@ import java.util.*;
 /*
  * 21:40 ~ 22:17
  * 
- * LRU 알고리즘 적용 문제
+ * LRU 적용 문제
  * 
  * 배열 안에 같은 값이 없으면 cache miss, 있으면 cache hit
  * 
