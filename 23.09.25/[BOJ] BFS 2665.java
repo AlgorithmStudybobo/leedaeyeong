@@ -35,9 +35,8 @@ public class Main {
 				room[i][j] = s.charAt(j) - ASCII;
 			}
 		}
-
 		out.write(crack(room) + "");
-        out.close();
+		out.close();
 	}
 
 	static int[] dx = { -1, 1, 0, 0 };
@@ -46,8 +45,8 @@ public class Main {
 	private static int crack(int[][] room) {
 		ArrayDeque<int[]> q = new ArrayDeque<>();
 		
-        q.offer(new int[] {0, 0, 0});
-        room[0][0] = -1;
+		q.offer(new int[] {0, 0, 0});
+		room[0][0] = -1;
 		
 		while(!q.isEmpty()) {
 			int[] nxt = q.poll();	
